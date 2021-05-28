@@ -18,7 +18,6 @@ function getRandomItem(arr) {
 // console.log (getRandomItem (destination))
 
 
-
 let userData1 = prompt ("Welcome to the Day Trip Generator!\nIf you ready for your 1st suggestion, Type 'Yes'"); {
     if (userData1 === "Yes"){ 
         console.log ("Take " + chosenTransportation + " to "+ chosenDestination + " and eat " + chosenRestaurant + " at " + chosenEntertainment + ".");
@@ -34,9 +33,10 @@ switch (userDataConfirm){
         break;
     case "new suggestion":
         console.log ("Here's a new suggestion!. Take " + chosenTransportation + " to "+ chosenDestination + " and eat " + chosenRestaurant + " at " + chosenEntertainment + ".");
+            userDataConfirm = prompt ("Are you satisfied with this suggestion?\nIf so, please type 'confirm'\nIf you would like a completely new suggestion, type 'new suggestion'")
         break;
     default:
-        console.log ("You must enter either 'confirm' or 'start over'");
+        console.log (userDataConfirm = prompt ("Are you satisfied with this suggestion?\nIf so, please type 'confirm'\nIf you would like a completely new suggestion, type 'new suggestion'"));
         break;
 }
 
