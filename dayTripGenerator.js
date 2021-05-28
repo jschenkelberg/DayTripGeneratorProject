@@ -14,10 +14,10 @@ function getRandomItem(arr) {
 // console.log (getRandomItem (destination))
 
 let userData1 = prompt ("Are you ready to take a day trip?\nIf so, Type 'Yes'"); {
-    if (userData1 = "Yes"){ 
+    if (userData1 === "Yes"){ 
         console.log ("Take a " +(getRandomItem (transportation)) + " to "+ (getRandomItem (destination)) + " and eat " + (getRandomItem(restaurant)) + " at " + (getRandomItem (entertainment)) + ".");
     }
-    else (userData1 !="Yes");{
+    else (userData1 !=="Yes");{
         console.log ("Please refresh the browser if you want another suggestion.")
     }
 }
@@ -25,8 +25,10 @@ let userData1 = prompt ("Are you ready to take a day trip?\nIf so, Type 'Yes'");
 //     if (newSelectionDestination = "Yes");
 //         console.log ("Here's a new city -" + (getRandomItem (destination))); 
 let userDataConfirm = prompt ("Are you satisfied with this suggestion?\nIf so, please type 'confirm'");{
-    if (userDataConfirm = "confirm")
+    if(userDataConfirm === "confirm") {
         console.log ("Trip Confirmed! Have a great day trip.");
-    else (userDataConfirm != "confirm")
-        console.log ("Please type confirm.")
+    }
+    else {
+        console.log ("Here's a new suggestion!. Take a " +(getRandomItem (transportation)) + " to "+ (getRandomItem (destination)) + " and eat " + (getRandomItem(restaurant)) + " at " + (getRandomItem (entertainment)) + ".");
+    }
 }
