@@ -4,10 +4,10 @@ let transportation = ["a car", "a bus", "a train", "a plane"];
 let destination = ["Chicago", "Milwaukee","Madison","Green Bay"];
 let restaurant = ["italian food", "chinese food", "burgers", "chicken"];
 let entertainment = ["a sporting event", "a concert", "a shopping mall", "the museum"];
-let chosenTransportation = (getRandomItem (transportation));
-let chosenDestination = (getRandomItem (destination));
-let chosenRestaurant = (getRandomItem (restaurant));
-let chosenEntertainment = (getRandomItem (entertainment));
+let chosenTransportation = getRandomItem (transportation);
+let chosenDestination = getRandomItem (destination);
+let chosenRestaurant = getRandomItem (restaurant);
+let chosenEntertainment = getRandomItem (entertainment);
 
 function getRandomItem(arr) {
     let randomIndex = Math.floor(Math.random() * arr.length);
@@ -17,32 +17,51 @@ function getRandomItem(arr) {
 }
 // console.log (getRandomItem (destination))
 
-
 let userData1 = prompt ("Welcome to the Day Trip Generator!\nIf you ready for your 1st suggestion, Type 'Yes'"); {
     if (userData1 === "Yes"){ 
-        console.log ("Take " + chosenTransportation + " to "+ chosenDestination + " and eat " + chosenRestaurant + " at " + chosenEntertainment + ".");
+        console.log ("Take " + chosenTransportation + " to "+ chosenDestination + " to eat " + chosenRestaurant + " at " + chosenEntertainment + ".");
     }
     else {
         console.log ("Refresh the browser when you want to proceed.")
     }
 }
-let userDataConfirm = prompt ("Are you satisfied with this suggestion?\nIf so, please type 'confirm'\nIf you would like a completely new suggestion, type 'new suggestion'");
+let userDataConfirm = "new suggestion";
+while (userDataConfirm === "new suggestion"){              
+userDataConfirm = prompt ("Are you satisfied with this suggestion?\nIf so, please type 'confirm'\nIf you would like a completely new suggestion, type 'new suggestion'");
 switch (userDataConfirm){
     case "confirm":
-        console.log ("Trip Confirmed! Have a great day trip.");
+        console.log ("Trip Confirmed! Have a great day trip. "+ "You will be taking " + chosenTransportation + " to "+ chosenDestination + " to eat " + chosenRestaurant + " at " + chosenEntertainment + ".");
         break;
-    case "new suggestion":
-        console.log ("Here's a new suggestion!. Take " + chosenTransportation + " to "+ chosenDestination + " and eat " + chosenRestaurant + " at " + chosenEntertainment + ".");
-            userDataConfirm = prompt ("Are you satisfied with this suggestion?\nIf so, please type 'confirm'\nIf you would like a completely new suggestion, type 'new suggestion'")
+    case "new suggestion":{
+        let chosenTransportation = getRandomItem (transportation);
+        let chosenDestination = getRandomItem (destination);
+        let chosenRestaurant = getRandomItem (restaurant);
+        let chosenEntertainment = getRandomItem (entertainment);
+        console.log ("Here's a new suggestion!. Take " + chosenTransportation + " to "+ chosenDestination + " to eat " + chosenRestaurant + " at " + chosenEntertainment + ".");
+            userDataConfirm = prompt ("Are you satisfied with this suggestion?\nIf so, please type 'confirm'\nIf you would like a completely new suggestion, type 'new suggestion'");//{
+                if (userDataConfirm === "confirm") {
+                    console.log ("Trip Confirmed! Have a great day trip. "+ "You will be taking " + chosenTransportation + " to "+ chosenDestination + " to eat " + chosenRestaurant + " at " + chosenEntertainment + "."); 
+            }        
+                else {
+                    console.log (userDataConfirm = prompt ("Are you satisfied with this suggestion?\nIf so, please type 'confirm'\nIf you would like a completely new suggestion, type 'new suggestion'"))               
+            } 
+         }
         break;
-    default:
+    default: 
         console.log (userDataConfirm = prompt ("Are you satisfied with this suggestion?\nIf so, please type 'confirm'\nIf you would like a completely new suggestion, type 'new suggestion'"));
         break;
+    }   
 }
 
+           //if (userDataConfirm === "confirm") {
+            //console.log ("Trip Confirmed! Have a great day trip. "+ "You will be taking " + chosenTransportation + " to "+ chosenDestination + " to eat " + chosenRestaurant + " at " + chosenEntertainment + "."); 
+            //}        
+            //else {
+            //console.log (userDataConfirm = prompt ("Are you satisfied with this suggestion?\nIf so, please type 'confirm'\nIf you would like a completely new suggestion, type 'new suggestion'"))               
+            //} 
 
 
-    //     if(userDataConfirm === "confirm") {
+//     if(userDataConfirm === "confirm") {
 //         console.log ("Trip Confirmed! Have a great day trip.");
 //     }
 //     else if (userDataConfirm === "start over") {
