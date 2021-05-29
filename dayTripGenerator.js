@@ -38,10 +38,17 @@ switch (userDataConfirm){
         let chosenRestaurant = getRandomItem (restaurant);
         let chosenEntertainment = getRandomItem (entertainment);
         console.log ("Here's a new suggestion!. Take " + chosenTransportation + " to "+ chosenDestination + " to eat " + chosenRestaurant + " at " + chosenEntertainment + ".");
-            userDataConfirm = prompt ("Are you satisfied with this suggestion?\nIf so, please type 'confirm'\nIf you would like a completely new suggestion, type 'new suggestion'");//{
+            userDataConfirm = prompt ("Are you satisfied with this suggestion?\nIf so, please type 'confirm'\nIf you would like a completely new suggestion, type 'new suggestion'");
                 if (userDataConfirm === "confirm") {
                     console.log ("Trip Confirmed! Have a great day trip. "+ "You will be taking " + chosenTransportation + " to "+ chosenDestination + " to eat " + chosenRestaurant + " at " + chosenEntertainment + "."); 
             }        
+                else if (userDataConfirm === "new suggestion") {
+                    let chosenTransportation = getRandomItem (transportation);
+                    let chosenDestination = getRandomItem (destination);
+                    let chosenRestaurant = getRandomItem (restaurant);
+                    let chosenEntertainment = getRandomItem (entertainment);
+                    console.log ("Here's a new suggestion!. Take " + chosenTransportation + " to "+ chosenDestination + " to eat " + chosenRestaurant + " at " + chosenEntertainment + ".");    
+                }
                 else {
                     console.log (userDataConfirm = prompt ("Are you satisfied with this suggestion?\nIf so, please type 'confirm'\nIf you would like a completely new suggestion, type 'new suggestion'"))               
             } 
