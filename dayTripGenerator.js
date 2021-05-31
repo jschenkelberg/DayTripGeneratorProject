@@ -1,8 +1,8 @@
 "use strict."
 
-let transportation = ["a car", "a bus", "a train", "a plane"];
-let destination = ["Chicago", "Milwaukee","Madison","Green Bay"];
-let restaurant = ["italian food", "chinese food", "burgers", "chicken"];
+let transportation = ["a car", "a bus", "a train", "a plane", "a hoverboard"];
+let destination = ["Chicago", "Milwaukee","Madison","Green Bay","Sheboygan"];
+let restaurant = ["Olive Garden", "Panda Express", "McDonald's", "Popeye's"];
 let entertainment = ["a sporting event", "a concert", "a shopping mall", "the museum"];
 let chosenTransportation = getRandomItem (transportation);
 let chosenDestination = getRandomItem (destination);
@@ -18,86 +18,57 @@ function getRandomItem(arr) {
 // console.log (getRandomItem (destination))
 
 let userData1 = prompt ("Welcome to the Day Trip Generator!\nIf you ready for your 1st suggestion, Type 'Yes'"); {
-    if (userData1 === "Yes"){ 
+    if (userData1 === "Yes"){
+        chosenTransportation = getRandomItem (transportation);
+        chosenDestination = getRandomItem (destination);
+        chosenRestaurant = getRandomItem (restaurant);
+        chosenEntertainment = getRandomItem (entertainment); 
         console.log ("Take " + chosenTransportation + " to "+ chosenDestination + " to eat " + chosenRestaurant + " at " + chosenEntertainment + ".");
     }
     else {
-        console.log ("Refresh the browser when you want to proceed.")
+        alert ("Refresh the browser when you want to proceed.")
     }
 }
+
 let userDataConfirm = "new suggestion";
 while (userDataConfirm === "new suggestion"){              
 userDataConfirm = prompt ("Are you satisfied with this suggestion?\nIf so, please type 'confirm'\nIf you would like a completely new suggestion, type 'new suggestion'");
 switch (userDataConfirm){
-    case "confirm":
+    case "confirm": {
         console.log ("Trip Confirmed! Have a great day trip. "+ "You will be taking " + chosenTransportation + " to "+ chosenDestination + " to eat " + chosenRestaurant + " at " + chosenEntertainment + ".");
+        }
         break;
-    case "new suggestion":{
-        let chosenTransportation = getRandomItem (transportation);
-        let chosenDestination = getRandomItem (destination);
-        let chosenRestaurant = getRandomItem (restaurant);
-        let chosenEntertainment = getRandomItem (entertainment);
+    case "new suggestion":{         
+        chosenTransportation = getRandomItem (transportation);
+        chosenDestination = getRandomItem (destination);
+        chosenRestaurant = getRandomItem (restaurant);
+        chosenEntertainment = getRandomItem (entertainment);
         console.log ("Here's a new suggestion!. Take " + chosenTransportation + " to "+ chosenDestination + " to eat " + chosenRestaurant + " at " + chosenEntertainment + ".");
             userDataConfirm = prompt ("Are you satisfied with this suggestion?\nIf so, please type 'confirm'\nIf you would like a completely new suggestion, type 'new suggestion'");
                 if (userDataConfirm === "confirm") {
                     console.log ("Trip Confirmed! Have a great day trip. "+ "You will be taking " + chosenTransportation + " to "+ chosenDestination + " to eat " + chosenRestaurant + " at " + chosenEntertainment + "."); 
             }        
                 else if (userDataConfirm === "new suggestion") {
-                    let chosenTransportation = getRandomItem (transportation);
-                    let chosenDestination = getRandomItem (destination);
-                    let chosenRestaurant = getRandomItem (restaurant);
-                    let chosenEntertainment = getRandomItem (entertainment);
-                    console.log ("Here's a new suggestion!. Take " + chosenTransportation + " to "+ chosenDestination + " to eat " + chosenRestaurant + " at " + chosenEntertainment + ".");    
+                    chosenTransportation = getRandomItem (transportation);
+                    chosenDestination = getRandomItem (destination);
+                    chosenRestaurant = getRandomItem (restaurant);
+                    chosenEntertainment = getRandomItem (entertainment);
+                    console.log ("Here's a new suggestion!. Take " + chosenTransportation + " to "+ chosenDestination + " to eat " + chosenRestaurant + " at " + chosenEntertainment + ".");                   
                 }
                 else {
-                    console.log (userDataConfirm = prompt ("Are you satisfied with this suggestion?\nIf so, please type 'confirm'\nIf you would like a completely new suggestion, type 'new suggestion'"))               
-            } 
-         }
+                    console.log (userDataConfirm = prompt ("Are you satisfied with this suggestion?\nIf so, please type 'confirm'\nIf you would like a completely new suggestion, type 'new suggestion'"));               
+            }        
+        }
+        break;
+    case "confirm new": {
+        console.log ("Trip Confirmed! Have a great day trip. "+ "You will be taking " + chosenTransportation + " to "+ chosenDestination + " to eat " + chosenRestaurant + " at " + chosenEntertainment + ".");
+            }
         break;
     default: 
         console.log (userDataConfirm = prompt ("Are you satisfied with this suggestion?\nIf so, please type 'confirm'\nIf you would like a completely new suggestion, type 'new suggestion'"));
         break;
     }   
 }
-
-           //if (userDataConfirm === "confirm") {
-            //console.log ("Trip Confirmed! Have a great day trip. "+ "You will be taking " + chosenTransportation + " to "+ chosenDestination + " to eat " + chosenRestaurant + " at " + chosenEntertainment + "."); 
-            //}        
-            //else {
-            //console.log (userDataConfirm = prompt ("Are you satisfied with this suggestion?\nIf so, please type 'confirm'\nIf you would like a completely new suggestion, type 'new suggestion'"))               
-            //} 
-
-
-//     if(userDataConfirm === "confirm") {
-//         console.log ("Trip Confirmed! Have a great day trip.");
-//     }
-//     else if (userDataConfirm === "start over") {
-//         console.log ("Here's a new suggestion!.Take " + chosenTransportation + " to "+ chosenDestination + " and eat " + chosenRestaurant + " at " + chosenEntertainment + ".");
-//             let userData2 = prompt ("Do you like this suggestion?\nType 'yes' or 'start over'");{
-//             if (userData2 === "yes"){
-//                 console.log ("Trip Confirmed! Have a great day trip.");
-//             }
-//             else if (userData2 === "start over");
-//                 console.log 
-//             }
-//     else if (userDataConfirm === "transport") {
-//         console.log ("How about " + chosenTransportation +"?");
-//     }
-//     else if (userDataConfirm === "city") {
-//         console.log ("How about " + chosenDestination +"?");
-//     }
-//     else if (userDataConfirm === "food") {
-//         console.log ("How about " + chosenRestaurant +"?");
-//     }
-//     else if (userDataConfirm === "entertainment") {
-//         console.log ("How about " + chosenTransportation +"?");
-//     }    
-//     else{
-//         console.log ("That is not a valid option, please start over by refreshing your browser.")
-//     } 
-// let newSelectionDestination = prompt ("Do you want a different city?\nPlease type Yes")
-//     if (newSelectionDestination = "Yes");
-//         console.log ("Here's a new city -" + (getRandomItem (destination))); 
 
 
 //console log the whole trip
