@@ -1,6 +1,6 @@
 "use strict."
 
-let transportation = ["a car", "a bus", "a train", "a plane", "a hoverboard", "an Uber", "a Lyft"];
+let transportation = ["a car", "a bus", "a train", "a plane", "a hoverboard", "a motorcycle"];
 let destination = ["Chicago","Milwaukee","Madison","Green Bay","Sheboygan","West Allis","Grafton"];
 let restaurant = ["Olive Garden","Panda Express", "McDonald's", "Popeye's","Burger King","Buffalo Wild Wings"];
 let entertainment = ["a sporting event", "a concert", "a shopping mall", "a museum","a park"];
